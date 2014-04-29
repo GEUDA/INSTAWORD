@@ -269,6 +269,30 @@ exports.edit = function(data, callback) {
 
 
 /**
+ * update
+ * @param {Object<_id>} data
+ * @param {Function} callback
+ * @callback(error, is_success)
+ */
+exports.update = function(data, callback) {
+  var condition = {
+    _id: data._id
+  };
+  var update = {
+    updated_at: new Date()
+  };
+  DocumentModel.findOneAndUpdate(condition, update, function(error, numAffected) {
+    if(error) {
+      callback(error);
+      return;
+    }
+    callback(null, 'UPDATED');
+  });
+};
+
+
+
+/**
  * remove
  * @param {Object<_id, user_id>} data
  * @param {Function} callback
