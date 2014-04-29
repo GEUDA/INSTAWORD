@@ -212,7 +212,7 @@ exports.remove = function(data, callback) {
  */
 exports.chain = function(data, callback) {
   var condition = {
-    target_id: data._id
+    target_id: data.target_id
   };
   FavoriteModel.remove(condition, function(error) {
     if(error) {

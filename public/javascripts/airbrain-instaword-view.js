@@ -173,6 +173,7 @@ AIRBRAIN.Instaword.View = (function() {
   View.prototype.hideShade = function() {
     $('#memo_show_modal').css('display', 'none');
     $('#memo_post_modal').css('display', 'none');
+    $('#memo_remove_modal').css('display', 'none');
     $('#group_select_modal').css('display', 'none');
     $('#group_create_modal').css('display', 'none');
     $('#group_invite_modal').css('display', 'none');

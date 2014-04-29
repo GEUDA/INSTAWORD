@@ -70,6 +70,20 @@ exports.view = require('./view');
 
 
 
+/* Comment */
+var CommentSchema = new Schema({
+    target_id: { type: Schema.Types.ObjectId, required: true },
+    body: { type: String, required: true },
+    user_id: { type: Number, required: true },
+    updated_at: { type: Date, default: Date.now },
+    created_at: { type: Date, default: Date.now }
+});
+
+exports.CommentModel = mongoose.model('Comment', CommentSchema);
+exports.comment = require('./comment');
+
+
+
 /* getAuthCookie */
 exports.getAuthCookie = function() {
   return uuid.v1();

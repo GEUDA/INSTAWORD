@@ -287,25 +287,12 @@ exports.remove = function(data, callback) {
           return;
         }
 
-        if(!result) { callback(null, false);
+        if(!result) {
+          callback(null, false);
           return;
         }
 
         callback(null, true);
-      });
-    },
-    function(is_exist, callback) {
-      if(!is_exist) {
-        callback(null, is_exist);
-      }
-
-      models.favorite.chain({_id: data._id}, function(error, result) {
-        if(error) {
-          callback(error);
-          return;
-        }
-
-        callback(null, is_exist);
       });
     }
   ],

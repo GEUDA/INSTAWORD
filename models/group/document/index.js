@@ -303,20 +303,6 @@ exports.remove = function(data, callback) {
 
         callback(null, true);
       });
-    },
-    function(is_exist, callback) {
-      if(!is_exist) {
-        callback(null, is_exist);
-      }
-
-      models.group.favorite.chain({_id: data._id}, function(error, result) {
-        if(error) {
-          callback(error);
-          return;
-        }
-
-        callback(null, is_exist);
-      });
     }
   ],
   function(error, result) {

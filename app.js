@@ -108,6 +108,12 @@ app.post('/words/get', lib.loginRequiredPost, routes.words.get);
 // 既読
 app.post('/views/set', lib.loginRequiredPost, routes.views.set);
 
+// コメント
+app.post('/comments/get', lib.loginRequiredPost, routes.comments.get); // post
+app.post('/comments/post', lib.loginRequiredPost, routes.comments.post); // post
+app.post('/comments/edit', lib.loginRequiredPost, routes.comments.edit); // edit
+app.post('/comments/remove', lib.loginRequiredPost, routes.comments.remove); // remove
+
 // 認証
 app.get('/sessions/login', routes.sessions.login); // sign in
 app.post('/sessions/auth', routes.sessions.auth); // sign in

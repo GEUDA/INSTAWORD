@@ -25,3 +25,4 @@ exports.favorites = require('./favorites');
 exports.groups = require('./groups');
 exports.words = require('./words');
 exports.views = require('./views');
+exports.comments = require('./comments');

@@ -493,34 +493,54 @@ exports.remove = function(req, res, next) {
     _id: req.param('_id')
   };
 
-
   async.waterfall([
     function(callback) {
       models.group.document.remove(data, function(error, result) {
         if(error) {
           return callback(error);
         }
-        callback(null);
+        callback(null, result);
       });
     },
-    function(callback) {
+    function(is_exist, callback) {
+      if(!is_exist) {
+        callback(null, is_exist);
+      }
+
       models.group.favorite.chain({_id: data._id}, function(error, result) {
         if(error) {
           return callback(error);
         }
-        callback(null);
+        callback(null, is_exist);
       });
     },
-    function(callback) {
+    function(is_exist, callback) {
+      if(!is_exist) {
+        return callback(null, is_exist);
+      }
+
       models.view.remove({_id: data._id}, function(error, result) {
         if(error) {
           return callback(error);
         }
-        callback(null);
+        callback(null, is_exist);
+      });
+    },
+    function(is_exist, callback) {
+      if(!is_exist) {
+        return callback(null, is_exist);
+      }
+
+      models.comment.chain({target_id: data._id}, function(error, result) {
+        if(error) {
+          return callback(error);
+        }
+
+        callback(null, is_exist);
       });
     }
   ],
-  function(error) {
+  function(error, result) {
     if(error) {
       return next(error);
     }
