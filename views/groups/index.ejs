@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+
+<div id="header" class="masonry group_header">
+  <h1>INSTAWORD</h1>
+  <nav>
+    <span id="nav_memo">MEMO</span> /
+    <span id="nav_random">RANDOM</span> /
+    <span id="nav_list">LIST</span> /
+    <span id="nav_favorite">FAVORITE</span> /
+    <span id="nav_config">CONFIG</span> /
+    <span id="nav_back">PUBLIC</span>
+  </nav>
+</div>
+
+
+<!-- Modal POST -->
+<div class="modal fade" id="post_modal" tabindex="-1" role="dialog" aria-labelledby="post_title" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="post_title">Memo</h4>
+      </div>
+      <div class="modal-body">
+        <form id="form_post">
+          <input id="input_group_id" name="group_id" type="hidden" value="<%= group_id %>"></input>
+          <label for="input_title">TITLE</label>
+          <input id="input_title" class="form-control" name="title" type="text" size="40" required="required"></input>
+          <label for="input_body">BODY</label>
+          <textarea id="input_body" class="form-control" name="body" rows="8"></textarea>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="button_post" type="button" class="btn btn-primary">Post</button>
+        <button id="button_save" type="button" class="btn btn-primary" style="display:none">Save</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="edit_modal" tabindex="-1" role="dialog" aria-labelledby="edit_title" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="edit_title">Memo</h4>
+      </div>
+      <div class="modal-body">
+        <form id="form_edit">
+          <input id="input_edit_id" name="id" type="hidden"></input>
+          <label for="input_edit_title">TITLE</label>
+          <input id="input_edit_title" class="form-control" name="title" type="text" size="40" required="required"></input>
+          <label for="input_edit_body">BODY</label>
+          <textarea id="input_edit_body" class="form-control" name="body" rows="8"></textarea>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="button_edit" type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="show_modal" tabindex="-1" role="dialog" aria-labelledby="show_title" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="show_title"></h4>
+      </div>
+      <div class="modal-body">
+        <p id="show_body"></p>
+        <p id="show_time"></p>
+      </div>
+      <div class="modal-footer">
+        <button id="button_show_close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="password_modal" tabindex="-1" role="dialog" aria-labelledby="password_title" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="password_title">CHANGE PASSWORD</h4>
+      </div>
+      <div class="modal-body">
+        <form id="form_password">
+          <p>
+            <label for="input_password">PASSWORD</label>
+            <input id="input_password" class="form-control" name="password" type="password" size="30" required="required"></input>
+          </p>
+          <p>
+            <label for="input_new_password">NEW PASSWORD</label>
+            <input id="input_new_password" class="form-control" name="new_password" type="password" size="30" required="required"></input>
+          </p>
+          <p>
+            <label for="input_new_password">NEW PASSWORD (AGAIN)</label>
+            <input id="input_new_password_again" class="form-control" name="new_password_again" type="password" size="30" required="required"></input>
+          </p>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="button_password" type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<!-- Group Invite Modal -->
+<div class="modal fade" id="group_invite_modal" tabindex="-1" role="dialog" aria-labelledby="group_invit_title" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="group_invite_title">INVITE GROUP MEMBER</h4>
+      </div>
+      <div class="modal-body">
+        <form id="form_post">
+          <input id="input_group_id" name="group_id" type="hidden" value="<%= group_id %>"></input>
+          <label for="input_group_email_address">EMAIL ADDRESS</label>
+          <input id="input_group_email_address" class="form-control" name="email_address" type="text" size="40" required="required"></input>
+          <label for="input_group_message">MESSAGE</label>
+          <textarea id="input_group_message" class="form-control" name="message" rows="8"></textarea>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="button_group_invite_send" type="button" class="btn btn-primary">Send</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+<!-- Modal -->
+<div class="modal fade bs-modal-sm" id="confirm_modal" tabindex="-1" role="dialog" aria-labelledby="confirm_title" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="confirm_title">CONFIRMATION</h4>
+      </div>
+      <div class="modal-body">
+        <p id="confirm_text"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button id="button_confirm" type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<script>
+  var group_id = '<%= group_id %>';
+</script>
+
+<script src="/javascripts/lib/masonry.pkgd.min.js"></script>
+<script src="/javascripts/airbrain-instaword-group.js"></script>
+<script src="/javascripts/airbrain-instaword-group-session.js"></script>
+<script src="/javascripts/airbrain-instaword-group-favorite.js"></script>
+<script src="/javascripts/airbrain-instaword-group-document.js"></script>
+<script src="/javascripts/instaword-group.js"></script>

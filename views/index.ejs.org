@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/normalize.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/lib/jquery-1.10.1.min.js"></script>
+    <script src="/javascripts/lib/bootstrap.min.js"></script>
+    <script src="/javascripts/lib/underscore-min.js"></script>
+    <script src="/javascripts/lib/async.js"></script>
+  </head>
+  <body>
+
+    <div id="wrap">
+      <%- body %>
+
+      <div id="footer">
+        <div class="container">
+          <p id="copyright">Copyright(c) 2013 PickMemo. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

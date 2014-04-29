@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+
+<!-- Main Header -->
+<div id="main_header">
+  <div class="container">
+    <div id="title_container" class="button">
+      <h1>INSTAWORD</h1>
+    </div>
+    <div id="header_button_container">
+      <span id="button_reload" class="button glyphicon glyphicon-refresh"></span>
+      <span id="button_config" class="button glyphicon glyphicon-align-justify"></span>
+    </div>
+  </div>
+</div>
+
+<!-- Menu Header -->
+<div id="menu_header" style="display: none;">
+  <div class="container">
+    <span id="button_group" class="button">グループ</span>
+    <span id="button_password_change" class="button">パスワードの変更</span>
+    <span id="button_timeline" class="button">タイムライン</span>
+  </div>
+</div>
+
+<!-- Group Header -->
+<div id="group_header" style="display: none;">
+  <div class="container">
+    <h2 id="group_name"></h2>
+    <p><span id="group_member_count">0</span>人がグループに参加中</p>
+  </div>
+</div>
+
+<!-- Nav Button -->
+<div id="nav_button_container">
+  <div class="container">
+    <div><div id="button_memo" class="button"><span class="glyphicon glyphicon-pencil"></span></div></div>
+    <div><div id="button_random" class="button"><span class="glyphicon glyphicon-random"></span></div></div>
+    <div><div id="button_owner" class="button"><span class="glyphicon glyphicon-th-list"></span></div></div>
+    <div><div id="button_favorite" class="button"><span class="glyphicon glyphicon-star"></span></div></div>
+    <div style="display:none;">
+      <div id="button_list_view" class="button"><span class="glyphicon glyphicon-th-list"></span></div>
+      <div id="button_card_view" class="button" style="display:none;"><span class="glyphicon glyphicon-th"></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Memo List Container -->
+<div id="memo_list_container">
+</div>
+
+<!-- Shade -->
+<div id="shade" style="display:none;">
+</div>
+
+<!-- Modal Container -->
+<div id="modal_container" style="display:none;">
+  <div>
+    <div class="modal_close_button_container">
+      <span id="button_modal_close" class="button glyphicon glyphicon-remove"></span>
+    </div>
+
+    <div class="modal_center">
+
+      <!-- Memo Show Modal -->
+      <div id="memo_show_modal" class="modal_content" style="display:none">
+        <div id="memo_show_modal_title_container" class="modal_title_container">
+          <div>
+            <h3 id="memo_show_modal_title">Title</h3>
+          </div>
+        </div>
+        <div id="memo_show_modal_body_container" class="modal_body_container">
+          <div>
+            <p id="memo_show_modal_body">Body<br/>Body</p>
+          </div>
+        </div>
+        <div id="memo_show_modal_foot_container" class="modal_foot_container">
+          <div>
+            <span>最終更新: <span id="memo_show_modal_updated">2014.4.17</span></span>
+          </div>
+          <div>
+            <span id="button_memo_show_modal_favorite" class="button glyphicon glyphicon-star"></span>
+            <span id="button_memo_show_modal_unfavorite" class="button glyphicon glyphicon-star" style="display:none;"></span>
+            <span id="button_memo_show_modal_edit" class="button glyphicon glyphicon-pencil"></span>
+            <span id="button_memo_show_modal_remove" class="button glyphicon glyphicon-trash"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Memo Post Modal -->
+      <div id="memo_post_modal" class="modal_content" style="display:none">
+        <div id="memo_post_modal_title_container" class="modal_title_container">
+          <div>
+            <input id="memo_post_modal_title" class="form-control" type="text" placeholder="タイトル" />
+          </div>
+        </div>
+        <div id="memo_post_modal_body_container" class="modal_body_container">
+          <div>
+            <textarea id="memo_post_modal_body" class="form-control" type="text" placeholder="本文"></textarea>
+            <input id="memo_post_modal_id" class="form-control" type="hidden" value="" />
+          </div>
+        </div>
+        <div id="memo_post_modal_foot_container" class="modal_foot_container">
+          <div></div>
+          <div>
+            <button id="button_memo_post_modal_post" class="button btn btn-primary">投稿</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Memo Remove Modal -->
+      <div id="memo_remove_modal" class="modal_content" style="display:none;">
+        <div id="memo_remove_modal_title_container" class="modal_title_container">
+          <div>
+            <h3>メモ削除</h3>
+          </div>
+        </div>
+        <div id="memo_remove_modal_body_container" class="modal_body_container">
+          <div>
+            <p>メモを削除します。<br/>本当によろしいですか？</p>
+          </div>
+        </div>
+        <div id="memo_remove_modal_foot_container" class="modal_foot_container">
+          <div></div>
+          <div>
+            <button id="button_memo_remove_modal_post" class="button btn btn-primary">確認</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group Select Modal -->
+      <div id="group_select_modal" class="modal_content" style="display:none;">
+        <div id="group_select_modal_title_container" class="modal_title_container">
+          <div>
+            <h3>グループ一覧</h3>
+          </div>
+        </div>
+        <div id="group_select_modal_body_container" class="modal_body_container">
+          <div>
+            <ul id="group_select_modal_group_list">
+            </ul>
+            <span id="button_group_create" class="button">作成</span>
+            <span id="button_group_invite" class="button">招待</span>
+            <span id="button_group_resign" class="button">脱退</span>
+          </div>
+        </div>
+        <div id="group_select_modal_foot_container" class="modal_foot_container">
+        </div>
+      </div>
+
+      <!-- Group Create Modal -->
+      <div id="group_create_modal" class="modal_content" style="display:none;">
+        <div id="group_create_modal_title_container" class="modal_title_container">
+          <div>
+            <h3>グループ作成</h3>
+          </div>
+        </div>
+        <div id="group_create_modal_body_container" class="modal_body_container">
+          <div>
+            <input id="group_create_modal_group_name" class="form-control" type="text" placeholder="グループ名" />
+          </div>
+        </div>
+        <div id="group_create_modal_foot_container" class="modal_foot_container">
+          <div></div>
+          <div>
+            <button id="button_group_create_modal_post" class="button btn btn-primary">作成</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group Invite Modal -->
+      <div id="group_invite_modal" class="modal_content" style="display:none;">
+        <div id="group_invite_modal_title_container" class="modal_title_container">
+          <div>
+            <h3>グループ招待</h3>
+          </div>
+        </div>
+        <div id="group_invite_modal_body_container" class="modal_body_container">
+          <div>
+            <input id="group_invite_modal_email_address" class="form-control" type="text" placeholder="foo@example.com" />
+            <textarea id="group_invite_modal_body" class="form-control" type="text" placeholder="メッセージ"></textarea>
+          </div>
+        </div>
+        <div id="group_invite_modal_foot_container" class="modal_foot_container">
+          <div></div>
+          <div>
+            <button id="button_group_invite_modal_post" class="button btn btn-primary">招待</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group Resign Modal -->
+      <div id="group_resign_modal" class="modal_content" style="display:none;">
+        <div id="group_resign_modal_title_container" class="modal_title_container">
+          <div>
+            <h3>グループ脱退</h3>
+          </div>
+        </div>
+        <div id="group_resign_modal_body_container" class="modal_body_container">
+          <div>
+            <p>グループの参加を取り消します。<br/>本当によろしいですか？</p>
+          </div>
+        </div>
+        <div id="group_resign_modal_foot_container" class="modal_foot_container">
+          <div></div>
+          <div>
+            <button id="button_group_resign_modal_post" class="button btn btn-primary">確認</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Password Change Modal -->
+      <div id="password_change_modal" class="modal_content" style="display:none;">
+        <div id="password_change_modal_title_container" class="modal_title_container">
+          <div>
+            <h3>グループ招待</h3>
+          </div>
+        </div>
+        <div id="password_change_modal_body_container" class="modal_body_container">
+          <div>
+            <label for="password_change_modal_old_password">現在のパスワード</label>
+            <input id="password_change_modal_old_password" class="form-control" type="password" />
+            <label for="password_change_modal_new_password">新しいパスワード</label>
+            <input id="password_change_modal_new_password" class="form-control" type="password" />
+            <label for="password_change_modal_new_password_again">新しいパスワード（確認）</label>
+            <input id="password_change_modal_new_password_again" class="form-control" type="password" />
+          </div>
+        </div>
+        <div id="password_change_modal_foot_container" class="modal_foot_container">
+          <div></div>
+          <div>
+            <button id="button_password_change_modal_post" class="button btn btn-primary">変更</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cnfoirm Modal -->
+      <div id="confirm_modal" class="modal_content" style="display:none;">
+        <div id="confirm_modal_title_container" class="modal_title_container">
+          <div>
+            <h3>確認画面</h3>
+          </div>
+        </div>
+        <div id="confirm_modal_body_container" class="modal_body_container">
+          <div>
+            <p id="confirm_text"></p>
+          </div>
+        </div>
+        <div id="confirm_modal_foot_container" class="modal_foot_container">
+          <div></div>
+          <div>
+            <button id="button_confirm_modal_post" class="button btn btn-primary">確認</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Loading -->
+<div id="loading" style="display:none;">
+</div>
+
+
+
+<script src="./javascripts/airbrain-instaword-session.js"></script>
+<script src="./javascripts/airbrain-instaword-group.js"></script>
+<script src="./javascripts/airbrain-instaword-favorite.js"></script>
+<script src="./javascripts/airbrain-instaword-document.js"></script>
+<script src="./javascripts/airbrain-instaword-view.js"></script>
+<script src="./javascripts/app.js"></script>

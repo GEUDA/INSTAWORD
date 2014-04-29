@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<div class="container">
+  <h1>INSTAWORD</h1>
+  <h2>LOG IN</h2>
+  <form id="form_login" action="./sessions/auth" method="POST">
+    <p>
+      <label for="input_email_address">Email Address</label>
+      <input id="input_email_address" name="email_address" type="text" size="30" placeholder="foo@example.com" required="required"></input>
+    </p>
+    <p>
+      <label for="input_password">Password</label>
+      <input id="input_password" name="password" type="password" size="30" placeholder="Password" required="required"></input>
+    </p>
+    <p>
+      <label for="input_remember">Remember</label>
+      <input id="input_remember" name="remember" type="checkbox"></input>
+    </p>
+    <p>
+      <input value="LOG IN" type="submit"></input>
+    </p>
+  </form>
+  <p class="error_message"><%= message %></p>
+  <h2><a href="./">TOP PAGE</a></h2>
+</div>
