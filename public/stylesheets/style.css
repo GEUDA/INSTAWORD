@@ -469,16 +469,56 @@ a:active {
   font-size: 1.0em;
 }
 
-#button_memo_post_modal_cancel {
+#button_memo_post_modal_post {
   width: 100px;
   height: 20px;
   padding: 0px;
   color: #ffffff;
-  background-color: #092d3a;
+  background-color: #cde073;
   border: 0px solid #000000;
 }
 
-#button_memo_post_modal_post {
+
+
+#comment_border {
+  margin-top: 200px;
+  margin-bottom: 20px;
+}
+
+#comment_container {
+}
+
+#comment_container > p {
+  margin-top: 30px;
+  line-height: 2em;
+}
+
+#comment_container > span {
+  margin-top: 10px;
+  color: #24ade0;
+  font-size: 0.8em;
+  line-height: 2em;
+}
+
+
+#comment_form {
+  margin-top: 50px;
+}
+
+#comment_form > textarea {
+  display: inline-block;
+  width: 420px;
+  height: 80px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#comment_form > button {
+  position: relative;
+  left: 320px;
+}
+
+#button_comment_post {
   width: 100px;
   height: 20px;
   padding: 0px;

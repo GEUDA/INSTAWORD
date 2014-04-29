@@ -57,8 +57,8 @@ AIRBRAIN.Instaword.Document = (function() {
       data: data,
       success: function(result) {
         console.log(result);
-        $('#input_title').val('');
-        $('#input_body').val('');
+        $('#memo_post_modal_title').val('');
+        $('#memo_post_modal_body').val('');
         AIRBRAIN.Instaword.view.initialize();
         this_object.initialize();
         this_object.random();

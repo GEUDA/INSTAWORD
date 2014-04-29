@@ -66,17 +66,26 @@
       <div id="memo_show_modal" class="modal_content" style="display:none">
         <div id="memo_show_modal_title_container" class="modal_title_container">
           <div>
-            <h3 id="memo_show_modal_title">Title</h3>
+            <h3 id="memo_show_modal_title"></h3>
           </div>
         </div>
         <div id="memo_show_modal_body_container" class="modal_body_container">
           <div>
-            <p id="memo_show_modal_body">Body<br/>Body</p>
+            <p id="memo_show_modal_body"></p>
+            <hr id="comment_border" class="comment_content" style="display: none;" />
+            <div id="comment_container" class="comment_content" style="display: none;">
+            </div>
+            <div id="comment_form" class="comment_content" style="display: none;">
+              <textarea id="input_comment_body" class="form-control" type="text"></textarea>
+              <input id="input_comment_id" class="form-control" type="hidden" value="" />
+              <input id="input_comment_target_id" class="form-control" type="hidden" value="" />
+              <button id="button_comment_post" class="button btn btn-primary">コメント</button>
+            </div>
           </div>
         </div>
         <div id="memo_show_modal_foot_container" class="modal_foot_container">
           <div>
-            <span>最終更新: <span id="memo_show_modal_updated">2014.4.17</span></span>
+            <span>最終更新: <span id="memo_show_modal_updated"></span></span>
           </div>
           <div>
             <span id="button_memo_show_modal_favorite" class="button glyphicon glyphicon-star"></span>
@@ -268,5 +277,6 @@
 <script src="./javascripts/airbrain-instaword-group.js"></script>
 <script src="./javascripts/airbrain-instaword-favorite.js"></script>
 <script src="./javascripts/airbrain-instaword-document.js"></script>
+<script src="./javascripts/airbrain-instaword-comment.js"></script>
 <script src="./javascripts/airbrain-instaword-view.js"></script>
 <script src="./javascripts/app.js"></script>

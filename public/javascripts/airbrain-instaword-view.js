@@ -213,6 +213,14 @@ AIRBRAIN.Instaword.View = (function() {
       + '.' + (dd.getMonth() + 1)
       + '.' + dd.getDate();
 
+    if(g_group_id == '') {
+      $('.comment_content').css('display', 'none');
+    }
+    else
+    {
+      $('.comment_content').css('display', 'block');
+    }
+
     $('#memo_show_modal_title').html(item.title);
     $('#memo_show_modal_body').html(item.body);
     $('#memo_show_modal_updated').html(u_time);
@@ -272,6 +280,42 @@ AIRBRAIN.Instaword.View = (function() {
         $('#button_memo_show_modal_favorite').css('display', 'inline');
       });
     }
+
+    /* comment */
+    $('#input_comment_target_id').val(item._id);
+    $('#button_comment_post').unbind();
+    $('#button_comment_post').bind('click', function(e) {
+      AIRBRAIN.Instaword.comment.post();
+    });
+  }
+
+  View.prototype.resetComment = function() {
+    $('#comment_container').empty();
+  }
+
+  View.prototype.setComment = function(item) {
+    var this_object = this;
+    item.body = item.body.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    item.body = item.body.replace(/\n/g, '<br />');
+
+    var container = $('#comment_container');
+
+    var comment = $('<p />')
+      .html(item.body);
+
+    container.append(comment);
+
+    // TODO button for owner
+    if(item.is_owner) {
+      var remove = $('<span />')
+        .attr('class', 'button')
+        .text('削除')
+        .bind('click', function(e) {
+          AIRBRAIN.Instaword.comment.remove(item._id);
+        });
+      container.append(remove);
+    }
+
   }
 
   View.prototype.setCardList = function(item) {
@@ -387,6 +431,9 @@ AIRBRAIN.Instaword.View = (function() {
           return;
         }
         content.css('border', '0px solid #ffffff');
+        if(g_group_id != '') {
+          AIRBRAIN.Instaword.comment.get(item._id);
+        }
         AIRBRAIN.Instaword.document.setRead(item._id);
         this_object.setDetail(item);
         this_object.showMemoDetail();

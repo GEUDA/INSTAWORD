@@ -180,6 +180,21 @@
 
 
 
+#comment_form > textarea {
+  display: inline-block;
+  width: 100%;
+  height: 80px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#comment_form > button {
+  position: relative;
+  left: 65%;
+}
+
+
+
 #memo_post_modal_title_container > div > input {
   display: inline;
   width: 90%;
