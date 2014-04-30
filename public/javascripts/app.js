@@ -3,8 +3,23 @@
  * app.js
  */
 
+/*
+// httpsにリダイレクト
+window.onload = function go_to_https() {
+  // 現在のURL取得
+  var url = location.href;
+  // 「https:」ではじまっていなければ、プロトコル部分をhttpsに書き換え
+  if ( !url.match(/^https:/) ) {
+    url = url.replace( /^[^:]+:/, "https:" );
+    location.href = url;
+  }
+}
+*/
+
+
+
 /** define */
-var BASE_URL = 'http://pickmemo.net/instaword/'
+var BASE_URL = 'https://pickmemo.net/instaword/'
 
 /** global */
 var g_group_id = '';
