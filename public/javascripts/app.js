@@ -159,3 +159,13 @@ $('#button_timeline').bind('click', function(e) {
   AIRBRAIN.Instaword.document.timeline();
   AIRBRAIN.Instaword.view.hideMenu();
 });
+
+
+
+/*
+ * iOS
+ */
+var g_user_agent = navigator.userAgent;
+if(g_user_agent.indexOf('iPhone') != -1) {
+  $('.modal_foot_container').css('padding-top', '0px');
+}
