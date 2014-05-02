@@ -111,6 +111,10 @@ a:active {
   color: #24ade0;
 }
 
+#menu_header > .container > .button:nth-child(1) {
+  margin-left: 0px;
+}
+
 
 
 #group_header {
@@ -362,7 +366,7 @@ a:active {
 .modal_title_container > div > h3 {
   margin: 0px;
   font-size: 1.2em;
-  line-height: 2em;
+  line-height: 1.6em;
   color: #ffffff;
 }
 
