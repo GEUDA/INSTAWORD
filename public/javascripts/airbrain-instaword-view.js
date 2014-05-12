@@ -342,7 +342,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('#comment_container').empty();
   }
 
-  View.prototype.setComment = function(item) {
+  View.prototype.setComment = function(item, target_id) {
     var this_object = this;
     item.body = item.body.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
     item.body = item.body.replace(/\n/g, '<br />');
@@ -360,7 +360,7 @@ AIRBRAIN.Instaword.View = (function() {
         .attr('class', 'button')
         .text('削除')
         .bind('click', function(e) {
-          AIRBRAIN.Instaword.comment.remove(item._id);
+          AIRBRAIN.Instaword.comment.remove(item._id, target_id);
         });
       container.append(remove);
     }
