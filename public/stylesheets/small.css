@@ -4,6 +4,17 @@
 
 
 
+#group_header > .container > h2 {
+  font-size: 1.6em;
+}
+
+#group_header > .container > p {
+  font-size: 1.0em;
+}
+
+
+
+
 #memo_list_container {
   text-align: center;
 }
