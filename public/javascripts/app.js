@@ -72,7 +72,7 @@ $('#button_group_create').bind('click', function(e) {
 /* GROUP MENU */
 $('#button_group_invite').bind('click', function(e) {
   AIRBRAIN.Instaword.view.hideShade();
-  AIRBRAIN.Instaword.view.showGroupInvite();
+  AIRBRAIN.Instaword.group.invite();
 });
 
 $('#button_group_resign').bind('click', function(e) {
@@ -131,11 +131,6 @@ $('#shade').bind('click', function(e) {
 /* GROUP MODAL */
 $('#button_group_create_modal_post').bind('click', function(e) {
   AIRBRAIN.Instaword.group.create();
-  AIRBRAIN.Instaword.view.hideShade();
-});
-
-$('#button_group_invite_modal_post').bind('click', function(e) {
-  AIRBRAIN.Instaword.group.invite();
   AIRBRAIN.Instaword.view.hideShade();
 });
 

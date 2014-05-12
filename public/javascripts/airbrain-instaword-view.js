@@ -158,12 +158,15 @@ AIRBRAIN.Instaword.View = (function() {
     }
   }
 
-  View.prototype.showGroupInvite = function() {
+  View.prototype.showGroupInvite = function(data) {
     $('#group_invite_modal').css('display', 'block');
     $('#shade').css('display', 'block');
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
+
+    $('#group_invite_modal_group_name').text(data.group_name);
+    $('#group_invite_modal_url').text(data.url);
 
     if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
       this.hideMemoList();

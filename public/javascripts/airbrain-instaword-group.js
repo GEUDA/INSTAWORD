@@ -61,8 +61,6 @@ AIRBRAIN.Instaword.Group = (function() {
     var this_object = this;
     var data = {
       group_id: g_group_id,
-      email_address: $('#group_invite_modal_email_address').val(),
-      message: $('#group_invite_modal_body').val()
     };
 
     $.ajax({
@@ -70,8 +68,7 @@ AIRBRAIN.Instaword.Group = (function() {
       url: BASE_URL + 'groups/invite',
       data: data,
       success: function(result) {
-        $('#group_invite_modal_email_address').val('');
-        $('#group_invite_modal_body').val('');
+        AIRBRAIN.Instaword.view.showGroupInvite(JSON.parse(result));
       },
       error: function(XMLHttpRequest, textStatus, errorThrown) {
       }

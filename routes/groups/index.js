@@ -83,15 +83,15 @@ exports.create = function(req, res, next) {
 
 /* 新規ユーザー招待 */
 exports.invite = function(req, res, next) {
-  var email_address = req.param('email_address');
+  //var email_address = req.param('email_address');
   var group_id = req.param('group_id');
   var group_name = '';
 
-  var message = req.param('message');
-  message = TextPreprocessing.encode(message);
-  message = TextPreprocessing.decode(message);
-  message = validator.escape(message);
-  message = message.replace(/\n/g, '<br/>');
+  //var message = req.param('message');
+  //message = TextPreprocessing.encode(message);
+  //message = TextPreprocessing.decode(message);
+  //message = validator.escape(message);
+  //message = message.replace(/\n/g, '<br/>');
 
   async.waterfall([
     // グループ名を取得
@@ -129,8 +129,8 @@ exports.invite = function(req, res, next) {
     },
     // メール送信
     function(token, callback) {
-      mail.sendGroupRegistrationUrl(email_address, token, group_name, message);
-      callback(null, true);
+      //mail.sendGroupRegistrationUrl(email_address, token, group_name, message);
+      callback(null, token);
     }
   ],
   function(error, result) {
@@ -138,7 +138,10 @@ exports.invite = function(req, res, next) {
       return next(error);
     }
 
-    res.send(true);
+    res.send(JSON.stringify({
+      group_name: group_name,
+      url: 'https://pickmemo.net/instaword/groups/register/' + result
+    }));
   });
 };
 

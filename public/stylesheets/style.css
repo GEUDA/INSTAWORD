@@ -613,6 +613,17 @@ a:active {
 
 
 
+#button_group_resign_modal_post {
+  width: 100px;
+  height: 20px;
+  padding: 0px;
+  color: #ffffff;
+  background-color: #cde073;
+  border: 0px solid #000000;
+}
+
+
+
 #password_change_modal_body_container > div > label {
   display: inline-block;
   width: 160px;
