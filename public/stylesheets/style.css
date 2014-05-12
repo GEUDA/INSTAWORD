@@ -273,6 +273,10 @@ a:active {
   overflow: hidden;
 }
 
+.card_memo_title_hover {
+  background-color: #24ade0;
+}
+
 .card_memo_title_container > div {
   display: table-cell;
   height: 50px;
@@ -307,10 +311,15 @@ a:active {
 }
 
 .card_memo_owner {
+  background-color: #c8eaf7;
 }
 
-.card_memo_new {
-  border: 1px solid #24ade0;
+.card_memo_new > .card_memo_title_container {
+  background-color: #166d8d;
+}
+
+.card_memo_new > .card_memo_title_hover {
+  background-color: #24ade0;
 }
 
 

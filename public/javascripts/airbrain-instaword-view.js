@@ -479,7 +479,7 @@ AIRBRAIN.Instaword.View = (function() {
           this_object.modal_state = 'none';
           return;
         }
-        content.css('border', '0px solid #ffffff');
+        content.attr('class', class_name.replace('card_memo_new', ''));
 
         if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
           window.open(BASE_URL + 'views/document/' + item._id);
@@ -495,10 +495,10 @@ AIRBRAIN.Instaword.View = (function() {
       })
       .hover(
         function() {
-          title_container.css('background-color', '#24ade0');
+          title_container.attr('class', 'card_memo_title_container card_memo_title_hover');
         },
         function() {
-          title_container.css('background-color', '#092d3a');
+          title_container.attr('class', 'card_memo_title_container');
         }
       );
 
