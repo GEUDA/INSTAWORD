@@ -19,7 +19,7 @@ var COUNT_LIMIT = 500;
  * @callback(error, document)
  */
 exports.get = function(data, callback) {
-  var field = '_id title body language updated_at created_at';
+  var field = '_id group_id title body language updated_at created_at';
   var condition = {
     _id: data._id
   }

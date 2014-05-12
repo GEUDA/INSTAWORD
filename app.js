@@ -69,6 +69,10 @@ if ('production' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/about', routes.about);
 
+// 既読
+app.get('/views/document/:_id', lib.loginRequired, routes.views.get);
+app.post('/views/set', lib.loginRequiredPost, routes.views.set);
+
 // 操作
 app.post('/documents/get', lib.loginRequiredPost, routes.documents.get); // post
 app.post('/documents/list', lib.loginRequiredPost, routes.documents.list); // list
@@ -104,9 +108,6 @@ app.post('/groups/favorites/remove', lib.loginRequiredPost, routes.groups.favori
 
 //  キーワード
 app.post('/words/get', lib.loginRequiredPost, routes.words.get);
-
-// 既読
-app.post('/views/set', lib.loginRequiredPost, routes.views.set);
 
 // コメント
 app.post('/comments/get', lib.loginRequiredPost, routes.comments.get); // post

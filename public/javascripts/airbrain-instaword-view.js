@@ -94,7 +94,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('body').css('overflow', 'hidden');
     this.modal_state = 'detail';
 
-    if(navigator.userAgent.indexOf('iPhone') != -1) {
+    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
       this.hideMemoList();
     }
   }
@@ -106,7 +106,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('body').css('overflow', 'hidden');
     this.modal_state = 'edit';
 
-    if(navigator.userAgent.indexOf('iPhone') != -1) {
+    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
       this.hideMemoList();
     }
   }
@@ -118,7 +118,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('body').css('overflow', 'hidden');
     this.modal_state = 'remove';
 
-    if(navigator.userAgent.indexOf('iPhone') != -1) {
+    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
       this.hideMemoList();
     }
   }
@@ -141,7 +141,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
 
-    if(navigator.userAgent.indexOf('iPhone') != -1) {
+    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
       this.hideMemoList();
     }
   }
@@ -153,7 +153,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
 
-    if(navigator.userAgent.indexOf('iPhone') != -1) {
+    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
       this.hideMemoList();
     }
   }
@@ -165,7 +165,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
 
-    if(navigator.userAgent.indexOf('iPhone') != -1) {
+    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
       this.hideMemoList();
     }
   }
@@ -177,7 +177,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
 
-    if(navigator.userAgent.indexOf('iPhone') != -1) {
+    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
       this.hideMemoList();
     }
   }
@@ -189,7 +189,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
 
-    if(navigator.userAgent.indexOf('iPhone') != -1) {
+    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
       this.hideMemoList();
     }
   }
@@ -201,7 +201,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
 
-    if(navigator.userAgent.indexOf('iPhone') != -1) {
+    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
       this.hideMemoList();
     }
   }
@@ -221,7 +221,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('body').css('overflow', 'auto');
     this.modal_state = 'none';
 
-    if(navigator.userAgent.indexOf('iPhone') != -1) {
+    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
       this.showMemoList();
     }
   }
@@ -334,7 +334,7 @@ AIRBRAIN.Instaword.View = (function() {
     $('#input_comment_target_id').val(item._id);
     $('#button_comment_post').unbind();
     $('#button_comment_post').bind('click', function(e) {
-      AIRBRAIN.Instaword.comment.post();
+      AIRBRAIN.Instaword.comment.post(item._id, $('#input_comment_body').val());
     });
   }
 
@@ -480,6 +480,12 @@ AIRBRAIN.Instaword.View = (function() {
           return;
         }
         content.css('border', '0px solid #ffffff');
+
+        if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
+          window.open(BASE_URL + 'views/document/' + item._id);
+          return;
+        }
+
         if(g_group_id != '') {
           AIRBRAIN.Instaword.comment.get(item._id);
         }

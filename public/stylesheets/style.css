@@ -350,6 +350,8 @@ a:active {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+
+
 .modal_title_container {
   height: 75px;
   background-color: #24ade0;
@@ -484,20 +486,20 @@ a:active {
 
 
 
-#comment_border {
+.modal_body_container > div > #comment_border {
   margin-top: 200px;
   margin-bottom: 20px;
 }
 
-#comment_container {
+.modal_body_container > div > #comment_container {
 }
 
-#comment_container > p {
+.modal_body_container > div > #comment_container > p {
   margin-top: 30px;
   line-height: 2em;
 }
 
-#comment_container > span {
+.modal_body_container > div > #comment_container > span {
   margin-top: 10px;
   color: #24ade0;
   font-size: 0.8em;
@@ -505,11 +507,11 @@ a:active {
 }
 
 
-#comment_form {
+.modal_body_container > div > #comment_form {
   margin-top: 50px;
 }
 
-#comment_form > textarea {
+.modal_body_container > div > #comment_form > textarea {
   display: inline-block;
   width: 420px;
   height: 80px;
@@ -517,7 +519,7 @@ a:active {
   border-radius: 5px;
 }
 
-#comment_form > button {
+.modal_body_container > div > #comment_form > button {
   position: relative;
   left: 320px;
 }
@@ -651,6 +653,85 @@ a:active {
   background-repeat: no-repeat;
   background-position: center center;
   z-index: 100;
+}
+
+
+
+/* document */
+.memo_show_title_container {
+  height: 75px;
+  background-color: #24ade0;
+}
+
+.memo_show_title_container > div {
+  width: 100%;
+  height: 75px;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.memo_show_title_container > div > h3 {
+  margin: 0px;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: #ffffff;
+}
+
+
+
+.memo_show_body_container {
+  width: 100%;
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+  padding: 10px;
+  padding-bottom: 60px;
+  word-break: break-all;
+}
+
+.memo_show_body_container > div > p {
+  line-height: 2em;
+}
+
+
+
+.memo_show_body_container > div > #comment_form {
+  margin: 50px auto 0px;
+}
+
+.memo_show_body_container > div > #comment_form > textarea {
+  display: block;
+  width: 80%;
+  height: 80px;
+  margin: 0px auto 10px;
+}
+
+.memo_show_body_container > div > #comment_form > button {
+  display: block;
+  position: relative;
+  left: 80%;
+}
+
+
+
+.memo_show_foot_container {
+  display: table;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.memo_show_foot_container > div {
+  display: table-cell;
+  width: 120px;
+  vertical-align: middle;
+}
+
+.memo_show_foot_container > div:nth-child(2) {
+  text-align: right;
 }
 
 
