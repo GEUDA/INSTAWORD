@@ -93,6 +93,10 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'detail';
+
+    if(navigator.userAgent.indexOf('iPhone') != -1) {
+      this.hideMemoList();
+    }
   }
 
   View.prototype.showMemoPost = function() {
@@ -101,6 +105,10 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'edit';
+
+    if(navigator.userAgent.indexOf('iPhone') != -1) {
+      this.hideMemoList();
+    }
   }
 
   View.prototype.showMemoRemove = function() {
@@ -109,6 +117,10 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'remove';
+
+    if(navigator.userAgent.indexOf('iPhone') != -1) {
+      this.hideMemoList();
+    }
   }
 
   View.prototype.showGroupSelect = function() {
@@ -128,6 +140,10 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
+
+    if(navigator.userAgent.indexOf('iPhone') != -1) {
+      this.hideMemoList();
+    }
   }
 
   View.prototype.showGroupCreate = function() {
@@ -136,6 +152,10 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
+
+    if(navigator.userAgent.indexOf('iPhone') != -1) {
+      this.hideMemoList();
+    }
   }
 
   View.prototype.showGroupInvite = function() {
@@ -144,6 +164,10 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
+
+    if(navigator.userAgent.indexOf('iPhone') != -1) {
+      this.hideMemoList();
+    }
   }
 
   View.prototype.showGroupResign = function() {
@@ -152,6 +176,10 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
+
+    if(navigator.userAgent.indexOf('iPhone') != -1) {
+      this.hideMemoList();
+    }
   }
 
   View.prototype.showConfirm = function() {
@@ -160,6 +188,10 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
+
+    if(navigator.userAgent.indexOf('iPhone') != -1) {
+      this.hideMemoList();
+    }
   }
 
   View.prototype.showPasswordChange = function() {
@@ -168,6 +200,10 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
+
+    if(navigator.userAgent.indexOf('iPhone') != -1) {
+      this.hideMemoList();
+    }
   }
 
   View.prototype.hideShade = function() {
@@ -184,6 +220,10 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'none');
     $('body').css('overflow', 'auto');
     this.modal_state = 'none';
+
+    if(navigator.userAgent.indexOf('iPhone') != -1) {
+      this.showMemoList();
+    }
   }
 
 
@@ -195,6 +235,15 @@ AIRBRAIN.Instaword.View = (function() {
   View.prototype.hideLoading = function() {
     $('body').css('overflow', 'auto');
     $('#loading').css('display', 'none');
+  }
+
+
+
+  View.prototype.showMemoList = function() {
+    $('#memo_list_container').css('display', 'block');
+  }
+  View.prototype.hideMemoList = function() {
+    $('#memo_list_container').css('display', 'none');
   }
 
 

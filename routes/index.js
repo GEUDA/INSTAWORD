@@ -5,16 +5,16 @@
 
 exports.index = function(req, res){
   if(req.session.user_id) {
-    return res.render('index', { title: 'Instaword' });
+    return res.render('index', { title: 'AGASTYA' });
   }
   else
   {
-    return res.render('about', { title: 'Instaword' });
+    return res.render('about', { title: 'AGASTYA' });
   }
 };
 
 exports.about = function(req, res) {
-  return res.render('about', { title: 'Instaword' });
+  return res.render('about', { title: 'AGASTYA' });
 };
 
 
