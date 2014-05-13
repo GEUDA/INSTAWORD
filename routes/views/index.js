@@ -127,6 +127,12 @@ exports.get = function(req, res, next) {
 
     memo.body = memo.body.replace(/\n/g, '<br />');
 
+    if(memo.group_id != '') {
+      memo.body = memo.body.replace(/https?:\/\/[a-zA-Z0-9\-_\.:@!~*'\(¥);/?&=\+$,%#]+/g, function(url) {
+        return '<a href="' + url + '" target="_brank">' + url + '</a>';
+      });
+    }
+
     var dd = new Date(memo.updated_at);
     memo.updated = dd.getFullYear() + '-' + (dd.getMonth() + 1) + '-' + dd.getDate();
 
