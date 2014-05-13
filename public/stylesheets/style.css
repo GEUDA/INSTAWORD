@@ -571,7 +571,6 @@ a:active {
 }
 
 #group_select_modal_body_container > div > ul > li:hover {
-  line-height: 2em;
   background-color: #73bbe0;
 }
 

@@ -246,6 +246,18 @@
 
 
 
+#group_select_modal_body_container > div > ul > li {
+  font-size: 1.2em;
+  line-height: 3em;
+}
+
+#group_select_modal_body_container > div > span {
+  font-size: 1.6em;
+  line-height: 3em;
+}
+
+
+
 .memo_show_body_container > div > #comment_form > button {
   display: block;
   position: relative;
