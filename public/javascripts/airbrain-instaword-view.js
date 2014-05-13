@@ -93,10 +93,6 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'detail';
-
-    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
-      this.hideMemoList();
-    }
   }
 
   View.prototype.showMemoPost = function() {
@@ -105,10 +101,6 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'edit';
-
-    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
-      this.hideMemoList();
-    }
   }
 
   View.prototype.showMemoRemove = function() {
@@ -117,10 +109,6 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'remove';
-
-    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
-      this.hideMemoList();
-    }
   }
 
   View.prototype.showGroupSelect = function() {
@@ -140,10 +128,6 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
-
-    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
-      this.hideMemoList();
-    }
   }
 
   View.prototype.showGroupCreate = function() {
@@ -152,10 +136,6 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
-
-    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
-      this.hideMemoList();
-    }
   }
 
   View.prototype.showGroupInvite = function(data) {
@@ -167,10 +147,6 @@ AIRBRAIN.Instaword.View = (function() {
 
     $('#group_invite_modal_group_name').text(data.group_name);
     $('#group_invite_modal_url').text(data.url);
-
-    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
-      this.hideMemoList();
-    }
   }
 
   View.prototype.showGroupResign = function() {
@@ -179,10 +155,6 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
-
-    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
-      this.hideMemoList();
-    }
   }
 
   View.prototype.showConfirm = function() {
@@ -191,10 +163,6 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
-
-    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
-      this.hideMemoList();
-    }
   }
 
   View.prototype.showPasswordChange = function() {
@@ -203,10 +171,6 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'block');
     $('body').css('overflow', 'hidden');
     this.modal_state = 'group';
-
-    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
-      this.hideMemoList();
-    }
   }
 
   View.prototype.hideShade = function() {
@@ -223,10 +187,6 @@ AIRBRAIN.Instaword.View = (function() {
     $('#modal_container').css('display', 'none');
     $('body').css('overflow', 'auto');
     this.modal_state = 'none';
-
-    if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
-      this.showMemoList();
-    }
   }
 
 
