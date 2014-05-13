@@ -35,6 +35,30 @@
   position: relative;
 }
 
+.card_memo_remove_button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-image: url('../images/note_delete.gif');
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.card_memo_edit_button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  background-image: url('../images/note_edit.gif');
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .card_memo_keyword_container {
   width: 100%;
   height: 100px;
