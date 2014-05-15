@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+
+<!-- Memo Show Modal -->
+<div id="memo_show" class="memo_show_content">
+  <div id="memo_show_title_container" class="memo_show_title_container">
+    <div>
+      <h3 id="memo_show_title"><%- title %></h3>
+    </div>
+  </div>
+  <div id="memo_show_body_container" class="memo_show_body_container">
+    <div>
+      <p id="memo_show_body"><%- body %></p>
+      <input id="input_document_id" class="form-control" type="hidden" value="<%- _id %>" />
+      <input id="input_group_id" class="form-control" type="hidden" value="<%- group_id %>" />
+      <hr id="comment_border" class="comment_content" style="display: none;" />
+      <div id="comment_container" class="comment_content" style="display: none;">
+      </div>
+      <div id="comment_form" class="comment_content" style="display: none;">
+        <textarea id="input_comment_body" class="form-control" type="text"></textarea>
+        <button id="button_comment_post" class="button btn btn-primary">コメント</button>
+      </div>
+    </div>
+  </div>
+  <div id="memo_show_foot_container" class="memo_show_foot_container">
+    <div>
+      <span>最終更新: <span id="memo_show_updated"><%- updated %></span></span>
+    </div>
+    <!--div>
+      <span id="button_memo_show_favorite" class="button glyphicon glyphicon-star"></span>
+      <span id="button_memo_show_unfavorite" class="button glyphicon glyphicon-star" style="display:none;"></span>
+      <span id="button_memo_show_edit" class="button glyphicon glyphicon-pencil"></span>
+      <span id="button_memo_show_remove" class="button glyphicon glyphicon-trash"></span>
+    </div-->
+  </div>
+</div>
+
+
+
+<script src="./javascripts/airbrain-instaword-session.js"></script>
+<script src="./javascripts/airbrain-instaword-group.js"></script>
+<script src="./javascripts/airbrain-instaword-favorite.js"></script>
+<script src="./javascripts/airbrain-instaword-document.js"></script>
+<script src="./javascripts/airbrain-instaword-comment.js"></script>
+<script src="./javascripts/airbrain-instaword-view.js"></script>
+<script src="./javascripts/document.js"></script>
