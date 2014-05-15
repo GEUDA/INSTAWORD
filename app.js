@@ -20,11 +20,6 @@ app.set('port', process.env.PORT || 3001);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(function(req, res, next) {
-  req.url = req.url.replace(/^\/instaword\/*/, '/');
-  next();
-});
-
 app.use(partials());
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -44,11 +39,6 @@ app.configure(function() {
   //app.use(lib.dynamicHelpers);
 });
 app.use(app.router);
-
-app.use(function(req, res, next) {
-  req.url = '/instaword' + req.url;
-  next();
-});
 
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -140,7 +140,7 @@ exports.invite = function(req, res, next) {
 
     res.send(JSON.stringify({
       group_name: group_name,
-      url: 'https://pickmemo.net/instaword/groups/register/' + result
+      url: 'https://agastya.pw/groups/register/' + result
     }));
   });
 };

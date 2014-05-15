@@ -199,7 +199,7 @@ exports.update = function(req, res, next) {
 /* ログアウト */
 exports.logout = function(req, res, next) {
   req.session.destroy();
-  res.clearCookie('instaword_authtoken', { path: '/' });
+  res.clearCookie('authtoken', { path: '/' });
   res.redirect('../login');
 };
 

@@ -4,7 +4,7 @@
  */
 
 /** define */
-var BASE_URL = 'https://pickmemo.net/instaword/'
+var BASE_URL = ''; //'https://pickmemo.net/instaword/'
 
 /** global */
 var g_group_id = '';

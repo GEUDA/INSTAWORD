@@ -12,6 +12,10 @@ var _ = require('underscore')
 
 
 
+var base_url = 'https://pickmemo.net';
+
+
+
 exports.condense = function(data, callback) {
   var data = {
     text: data.text
@@ -20,9 +24,10 @@ exports.condense = function(data, callback) {
   async.waterfall([
     function(callback) {
       var option = {
-        url: 'http://127.0.0.1:55000/condense',
+        url: base_url + '/condense',
         form: data,
-        json: true
+        json: true,
+        rejectUnauthorized: false
       };
       request.post(option, function(error, response, body) {
         if(error) {
@@ -62,9 +67,10 @@ exports.get = function(req, res, next) {
   async.waterfall([
     function(callback) {
       var option = {
-        url: 'http://127.0.0.1:55000/condense',
+        url: base_url + '/condense',
         form: data,
-        json: true
+        json: true,
+        rejectUnauthorized: false
       };
       request.post(option, function(error, response, body) {
         if(error) {
