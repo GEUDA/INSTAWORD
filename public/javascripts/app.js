@@ -43,7 +43,7 @@ AIRBRAIN.Instaword.document.random();
 
 
 /* MAIN HEADER */
-$('#title_container').bind('click', function(e) {
+$('#button_title').bind('click', function(e) {
   location.href = BASE_URL;
 });
 
