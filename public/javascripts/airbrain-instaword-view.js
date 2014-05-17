@@ -433,8 +433,8 @@ AIRBRAIN.Instaword.View = (function() {
     if(item.is_owner) {
       class_name += ' card_memo_owner';
     }
-    if(!item.is_read) {
-      class_name += ' card_memo_new';
+    if(item.is_read) {
+      class_name += ' card_memo_is_read';
     }
 
     var content = $('<div/>')
@@ -448,7 +448,7 @@ AIRBRAIN.Instaword.View = (function() {
           this_object.modal_state = 'none';
           return;
         }
-        content.attr('class', class_name.replace('card_memo_new', ''));
+        content.attr('class', class_name + ' card_memo_is_read');
 
         if(navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('Android') != -1) {
           window.open(BASE_URL + 'views/document/' + item._id);

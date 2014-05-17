@@ -310,15 +310,15 @@ a:active {
   font-size: 1.0em;
 }
 
-.card_memo_owner {
-  background-color: #c8eaf7;
+.card_memo_is_read {
+  opacity: 0.6;
 }
 
-.card_memo_new > .card_memo_title_container {
+.card_memo_owner > .card_memo_title_container {
   background-color: #166d8d;
 }
 
-.card_memo_new > .card_memo_title_hover {
+.card_memo_owner > .card_memo_title_hover {
   background-color: #24ade0;
 }
 

@@ -4,6 +4,57 @@
 
 
 
+/*
+ * about
+ */
+#abount_container > h1 {
+  margin: 15px 0px 10px;
+  padding: 0px;
+  line-height: 1.0;
+  font-size: 3.8em;
+}
+
+#about_container > p {
+  margin: 15px 0px 10px;
+  padding: 0px;
+  line-height: 1.0;
+  font-size: 1.6em;
+}
+
+#about_container > span {
+  margin: 10px 0px 10px;
+  padding: 0px;
+  line-height: 1.0;
+  font-size: 1.8em;
+}
+
+#slide_container {
+  margin: 20px auto 20px;
+}
+
+#slide_container > div {
+  width: 300px;
+  margin: 60px auto 20px;
+}
+
+#slide_container > div > h2 {
+  margin: 20px 0px 20px;
+  text-align: center;
+  line-height: 1.0;
+  font-size: 1.2em;
+}
+
+#slide_container > div > p {
+  text-align: center;
+  line-height: 1.2;
+  font-size: 1.0em;
+}
+
+
+
+/*
+ * index
+ */
 #group_header > .container > h2 {
   font-size: 1.6em;
 }

@@ -51,12 +51,6 @@ a:active {
 
 
 /**
- * index
- */
-
-
-
-/**
  * about
  */
 #about_container {
@@ -68,7 +62,6 @@ a:active {
   padding: 0px;
   line-height: 1.0;
   font-size: 3.8em;
-  font-family: mplus-1p-light;
 }
 
 #about_container > p {
@@ -76,7 +69,6 @@ a:active {
   padding: 0px;
   line-height: 1.0;
   font-size: 2.4em;
-  font-family: mplus-1p-light;
 }
 
 #about_container > span {
@@ -84,7 +76,6 @@ a:active {
   padding: 0px;
   line-height: 1.0;
   font-size: 1.8em;
-  font-family: mplus-1p-light;
 }
 
 #slide_container {
@@ -101,14 +92,12 @@ a:active {
   text-align: center;
   line-height: 1.0;
   font-size: 1.6em;
-  font-family: mplus-1p-light;
 }
 
 #slide_container > div > p {
   text-align: center;
   line-height: 1.0;
   font-size: 1.2em;
-  font-family: mplus-1p-light;
 }
 
 
