@@ -497,6 +497,7 @@ AIRBRAIN.Instaword.View = (function() {
             g_group_id = item._id;
             $('#group_name').text(item.group_name);
             $('#group_member_count').text(item.count);
+            $('#group_select_modal_group_name').text(item.group_name);
             this_object.initialize();
             this_object.showGroupHeader();
             AIRBRAIN.Instaword.document.initialize();

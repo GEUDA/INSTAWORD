@@ -580,6 +580,11 @@ a:active {
   color: #24ade0;
 }
 
+#group_select_modal_group_name {
+  margin: 15px;
+  font-size: 1.2em;
+}
+
 
 
 #button_group_create_modal_post {
