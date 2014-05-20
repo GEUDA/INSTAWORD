@@ -234,13 +234,13 @@ AIRBRAIN.Instaword.View = (function() {
     }
 
     if(g_group_id != '') {
-      item.body = item.body.replace(/https?:\/\/[a-zA-Z0-9\-_\.:@!~*'\(¥);/?&=\+$,%#]+/g, function(url) {
+      var body_text = item.body.replace(/https?:\/\/[a-zA-Z0-9\-_\.:@!~*'\(¥);/?&=\+$,%#]+/g, function(url) {
         return '<a href="' + url + '" target="_brank">' + url + '</a>';
       });
     }
 
     $('#memo_show_modal_title').html(item.title);
-    $('#memo_show_modal_body').html(item.body);
+    $('#memo_show_modal_body').html(body_text);
     $('#memo_show_modal_updated').html(u_time);
 
     /* owner */
