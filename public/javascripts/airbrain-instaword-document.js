@@ -343,7 +343,7 @@ AIRBRAIN.Instaword.Document = (function() {
         }
 
         result = JSON.parse(result);
-        item.keyword = result.body;
+        item.keyword = result.analysis;
         this_object.document_list.push(item);
 
         AIRBRAIN.Instaword.view.setCardList(item);

@@ -408,7 +408,14 @@ AIRBRAIN.Instaword.View = (function() {
 
     /* keyword */
     var keyword_container = $('<div/>').attr('class', 'card_memo_keyword_container');
-    var keyword_list = _.sample(item.keyword, 6);
+    var keyword_list = [];
+    var keyword_count = 0;
+    while(keyword_list.length < 6 && keyword_count < item.keyword.length) {
+      if(item.keyword[keyword_count].type == 'body' || item.keyword[keyword_count].type == 'number') {
+        keyword_list.push(item.keyword[keyword_count]);
+      }
+      keyword_count++;
+    }
     var keyword_text = '';
     for(var i = 0; i < keyword_list.length; i++) {
       if(i > 0) {

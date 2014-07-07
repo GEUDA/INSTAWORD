@@ -12,7 +12,7 @@ var _ = require('underscore')
 
 
 
-var base_url = 'https://pickmemo.net';
+var base_url = 'https://api.pickmemo.net';
 
 
 
@@ -24,7 +24,7 @@ exports.condense = function(data, callback) {
   async.waterfall([
     function(callback) {
       var option = {
-        url: base_url + '/condense',
+        url: base_url + '/iengine/get',
         form: data,
         json: true,
         rejectUnauthorized: false
@@ -67,7 +67,7 @@ exports.get = function(req, res, next) {
   async.waterfall([
     function(callback) {
       var option = {
-        url: base_url + '/condense',
+        url: base_url + '/iengine/get',
         form: data,
         json: true,
         rejectUnauthorized: false
