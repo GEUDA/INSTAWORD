@@ -233,8 +233,9 @@ AIRBRAIN.Instaword.View = (function() {
       $('.comment_content').css('display', 'block');
     }
 
+    var body_text = item.body;
     if(g_group_id != '') {
-      var body_text = item.body.replace(/https?:\/\/[a-zA-Z0-9\-_\.:@!~*'\(¥);/?&=\+$,%#]+/g, function(url) {
+      body_text = body_text.replace(/https?:\/\/[a-zA-Z0-9\-_\.:@!~*'\(¥);/?&=\+$,%#]+/g, function(url) {
         return '<a href="' + url + '" target="_brank">' + url + '</a>';
       });
     }
